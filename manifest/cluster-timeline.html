@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifest Skill Cluster — Development Timeline</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 3rem;
+        }
+        h1 { font-size: 2.2rem; color: #2d3748; margin-bottom: 0.5rem; text-align: center; }
+        .subtitle { text-align: center; color: #718096; font-size: 1.05rem; margin-bottom: 2rem; }
+        .timeline { position: relative; margin: 2rem 0; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(#667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+        .milestone {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        .milestone.left { justify-content: flex-end; }
+        .milestone-content {
+            width: 45%;
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 2px solid #e2e8f0;
+        }
+        .milestone.left .milestone-content { margin-right: 1rem; }
+        .milestone.right .milestone-content { margin-left: 1rem; }
+        .milestone-dot {
+            width: 24px; height: 24px;
+            border-radius: 9999px;
+            background: #48bb78;
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px #48bb78;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+        .milestone-dot.in-progress { background: #ed8936; box-shadow: 0 0 0 3px #ed8936; }
+        .milestone-dot.future { background: #a0aec0; box-shadow: 0 0 0 3px #a0aec0; }
+        .milestone h3 { color: #2d3748; font-size: 1.1rem; margin-bottom: 0.35rem; }
+        .milestone .date { font-size: 0.85rem; color: #718096; margin-bottom: 0.5rem; }
+        .milestone p { color: #4a5568; font-size: 0.95rem; line-height: 1.45; }
+        .status { display: inline-block; font-size: 0.75rem; padding: 2px 8px; border-radius: 9999px; font-weight: 600; margin-top: 0.4rem; }
+        .status.done { background: #c6f6d5; color: #22543d; }
+        .status.progress { background: #feebc8; color: #744210; }
+        .status.future { background: #e2e8f0; color: #4a5568; }
+        footer { margin-top: 2rem; text-align: center; color: #718096; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 Manifest Skill Cluster Timeline</h1>
+        <p class="subtitle">From initial reviews to the living visual manifest (Visual layer as the heart)</p>
+
+        <div class="timeline">
+            <!-- Milestone 1 -->
+            <div class="milestone left">
+                <div class="milestone-content">
+                    <h3>Initial Review: Installed vs Published</h3>
+                    <div class="date">Previous session</div>
+                    <p>Compared craft-agent swarm-architect install against GitHub main. Confirmed sync at v0.1.1. No drift in core SKILL.md.</p>
+                    <span class="status done">DONE</span>
+                </div>
+                <div class="milestone-dot"></div>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="milestone right">
+                <div class="milestone-dot"></div>
+                <div class="milestone-content">
+                    <h3>Discovery of Active Sources on Madara</h3>
+                    <div class="date">This session</div>
+                    <p>Reviewed the two thoughtseed source trees. Identified active Copilot / next-wave feature branches on both.</p>
+                    <span class="status done">DONE</span>
+                </div>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div class="milestone left">
+                <div class="milestone-content">
+                    <h3>Recognition of Sibling Relationship + New Feature</h3>
+                    <div class="date">This session</div>
+                    <p>Next-wave-orchestrator = specialized GitHub reality + lanes + dispatch. Swarm = broad planner that integrated the capability. Shared pinned constants.</p>
+                    <span class="status done">DONE</span>
+                </div>
+                <div class="milestone-dot"></div>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="milestone right">
+                <div class="milestone-dot in-progress"></div>
+                <div class="milestone-content">
+                    <h3>Third Piece Identified: Visual as Central</h3>
+                    <div class="date">This session (current)</div>
+                    <p>Confirmed visual-documentation-skills/1.1.0 as the most crucial layer. Every decision, stub, wave, dispatch must be visualized and live.</p>
+                    <span class="status progress">IN PROGRESS</span>
+                </div>
+            </div>
+
+            <!-- Milestone 5 -->
+            <div class="milestone left">
+                <div class="milestone-content">
+                    <h3>Scope &amp; Plan the Manifest Cluster</h3>
+                    <div class="date">This session</div>
+                    <p>Created SCOPE_AND_PLAN.md. Defined bundle of the three, visual as heart, local server + concurrent watcher.</p>
+                    <span class="status progress">IN PROGRESS</span>
+                </div>
+                <div class="milestone-dot in-progress"></div>
+            </div>
+
+            <!-- Milestone 6 -->
+            <div class="milestone right">
+                <div class="milestone-dot future"></div>
+                <div class="milestone-content">
+                    <h3>Build the Visual Manifest (This File)</h3>
+                    <div class="date">Now</div>
+                    <p>Generate self-contained HTMLs (architecture, timeline, flowchart, dashboard) using the visual skills patterns. Place in manifest/ dir.</p>
+                    <span class="status future">NEXT</span>
+                </div>
+            </div>
+
+            <!-- Milestone 7 -->
+            <div class="milestone left">
+                <div class="milestone-content">
+                    <h3>Live Server + Concurrent Updates</h3>
+                    <div class="date">Immediate follow-up</div>
+                    <p>Run local server on manifest/. Add watcher that regenerates visuals when planner artifacts (plans, waves, decisions, stubs) change.</p>
+                    <span class="status future">PLANNED</span>
+                </div>
+                <div class="milestone-dot future"></div>
+            </div>
+
+            <div class="milestone right">
+                <div class="milestone-dot future"></div>
+                <div class="milestone-content">
+                    <h3>Dogfood + Package the Cluster</h3>
+                    <div class="date">Next</div>
+                    <p>Use the cluster to visualize its own development. Create SKILL.md for manifest-skill. Define how to bundle the three + new wiring.</p>
+                    <span class="status future">PLANNED</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <strong>Manifest Skill Cluster Timeline</strong> — Visual layer emphasized as the living central truth.
+        </footer>
+    </div>
+</body>
+</html>

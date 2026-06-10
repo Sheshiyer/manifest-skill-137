@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifest Skill Cluster — Integration Flow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 3rem;
+        }
+        h1 { font-size: 2rem; color: #2d3748; margin-bottom: 0.5rem; text-align: center; }
+        .subtitle { text-align: center; color: #718096; margin-bottom: 2rem; }
+        .diagram-container { background: #f7fafc; border-radius: 16px; padding: 2rem; margin: 1.5rem 0; }
+        svg { width: 100%; height: auto; }
+        .legend { display: flex; gap: 2rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+        footer { text-align: center; margin-top: 2rem; color: #718096; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔀 Manifest Integration Flow</h1>
+        <p class="subtitle">How the three skills produce the living visual manifest (Visual Layer = Central Hub)</p>
+
+        <div class="diagram-container">
+            <svg viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
+                <!-- Swarm Architect -->
+                <rect x="80" y="60" width="240" height="110" rx="14" fill="#4299e1"/>
+                <text x="200" y="100" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Swarm Architect</text>
+                <text x="200" y="125" text-anchor="middle" fill="white" font-size="12">• Phase → Wave → Swarm</text>
+                <text x="200" y="145" text-anchor="middle" fill="white" font-size="12">• Contracts, Stubs, Decisions</text>
+
+                <!-- Next Wave Orchestrator -->
+                <rect x="80" y="220" width="240" height="110" rx="14" fill="#ed8936"/>
+                <text x="200" y="260" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Next-Wave Orchestrator</text>
+                <text x="200" y="285" text-anchor="middle" fill="white" font-size="12">• GitHub Reality Scan</text>
+                <text x="200" y="305" text-anchor="middle" fill="white" font-size="12">• Lanes + Dispatch</text>
+
+                <!-- Arrows from planners to wiring -->
+                <path d="M330 115 L410 180" stroke="#2d3748" stroke-width="3" marker-end="url(#arrow)"/>
+                <path d="M330 275 L410 240" stroke="#2d3748" stroke-width="3" marker-end="url(#arrow)"/>
+
+                <!-- Wiring Layer -->
+                <rect x="420" y="130" width="200" height="140" rx="12" fill="#f59e0b"/>
+                <text x="520" y="170" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Wiring / Manifest</text>
+                <text x="520" y="195" text-anchor="middle" fill="white" font-size="12">Orchestrator</text>
+                <text x="520" y="220" text-anchor="middle" fill="white" font-size="11">• Artifact extraction</text>
+                <text x="520" y="238" text-anchor="middle" fill="white" font-size="11">• Prompt construction</text>
+                <text x="520" y="256" text-anchor="middle" fill="white" font-size="11">• Regeneration triggers</text>
+
+                <!-- Arrow to Visual -->
+                <path d="M630 200 L720 200" stroke="#2d3748" stroke-width="4" marker-end="url(#arrow-thick)"/>
+
+                <!-- CENTRAL VISUAL LAYER (emphasized) -->
+                <rect x="740" y="80" width="300" height="240" rx="18" fill="#9f7aea" stroke="#553c9a" stroke-width="5"/>
+                <text x="890" y="125" text-anchor="middle" fill="white" font-size="18" font-weight="bold">VISUAL LAYER</text>
+                <text x="890" y="150" text-anchor="middle" fill="white" font-size="13">(THE LIVING MANIFEST)</text>
+                <text x="890" y="185" text-anchor="middle" fill="white" font-size="12">architecture-diagram-creator</text>
+                <text x="890" y="205" text-anchor="middle" fill="white" font-size="12">timeline-creator</text>
+                <text x="890" y="225" text-anchor="middle" fill="white" font-size="12">flowchart-creator</text>
+                <text x="890" y="245" text-anchor="middle" fill="white" font-size="12">dashboard-creator</text>
+                <text x="890" y="265" text-anchor="middle" fill="white" font-size="12">technical-doc-creator</text>
+                <text x="890" y="295" text-anchor="middle" fill="white" font-size="11" font-weight="bold">+ Live Server + Watcher</text>
+
+                <!-- Output -->
+                <rect x="740" y="360" width="300" height="90" rx="12" fill="#48bb78"/>
+                <text x="890" y="395" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Living Manifest Output</text>
+                <text x="890" y="420" text-anchor="middle" fill="white" font-size="12">Self-contained HTMLs • Local Server (8765)</text>
+                <text x="890" y="440" text-anchor="middle" fill="white" font-size="12">Concurrent • Check-in ready</text>
+
+                <path d="M890 320 L890 355" stroke="#2d3748" stroke-width="3" marker-end="url(#arrow-green)"/>
+
+                <!-- Legend -->
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0,10 3,0 6" fill="#2d3748"/>
+                    </marker>
+                    <marker id="arrow-thick" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+                        <polygon points="0 0,12 4,0 8" fill="#553c9a"/>
+                    </marker>
+                    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0,10 3,0 6" fill="#48bb78"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><span style="color:#4299e1; font-weight:700;">■</span> Swarm Architect (Planner)</div>
+            <div class="legend-item"><span style="color:#ed8936; font-weight:700;">■</span> Next-Wave Orchestrator</div>
+            <div class="legend-item"><span style="color:#9f7aea; font-weight:700;">■</span> Visual Layer (Central Hub)</div>
+            <div class="legend-item"><span style="color:#48bb78; font-weight:700;">■</span> Live Output + Server</div>
+        </div>
+
+        <footer>
+            The visual layer receives from both planners via the wiring layer and becomes the single source of manifested truth for the entire cluster.
+        </footer>
+    </div>
+</body>
+</html>

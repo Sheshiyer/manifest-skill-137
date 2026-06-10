@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifest Skill Cluster — Architecture</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 3rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .section { margin: 2rem 0; }
+        .section-title {
+            font-size: 1.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+        }
+        .metric-value { font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .metric-label { font-size: 0.9rem; opacity: 0.9; }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        .feature-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .feature-card h3 { color: #667eea; margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .diagram-container {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        svg { width: 100%; height: auto; display: block; }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 12px;
+            justify-content: center;
+        }
+        .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+        .legend-box { width: 20px; height: 20px; border-radius: 4px; border: 2px solid #2d3748; }
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        .highlight { background: #fef3c7; padding: 0.1rem 0.3rem; border-radius: 3px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌀 Manifest Skill Cluster</h1>
+        <p class="subtitle">The Living Visual Truth Layer — Architecture v0.1</p>
+
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="metric-value">3</div>
+                <div class="metric-label">Core Skills in Cluster</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">1</div>
+                <div class="metric-label">Central Visual Layer</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">5</div>
+                <div class="metric-label">Visual Generator Types</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">∞</div>
+                <div class="metric-label">Decisions / Stubs Visualized</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📊 Business Objectives &amp; End Users</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Swarm Architect</h3>
+                    <ul>
+                        <li>Phase → Wave → Swarm planning</li>
+                        <li>Contract-first parallelism</li>
+                        <li>GitHub sync + memory (OpenViking)</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Next-Wave Orchestrator</h3>
+                    <ul>
+                        <li>GitHub reality scan → Status Report</li>
+                        <li>Prioritized next wave with lanes</li>
+                        <li>Human vs Copilot dispatch</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Visual Documentation (Core)</h3>
+                    <ul>
+                        <li>Every decision, stub, "done" visualized</li>
+                        <li>Live local server + concurrent updates</li>
+                        <li>Self-contained HTML manifests</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📥 Data / Artifact Flow (Visual Layer as Hub)</h2>
+            <div class="diagram-container">
+                <svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Swarm -->
+                    <rect x="50" y="80" width="220" height="120" rx="12" fill="#4299e1" stroke="#2b6cb0" stroke-width="3"/>
+                    <text x="160" y="115" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Swarm Architect</text>
+                    <text x="160" y="140" text-anchor="middle" fill="white" font-size="11">Plans • Waves • Contracts</text>
+                    <text x="160" y="160" text-anchor="middle" fill="white" font-size="11">Stubs • Decisions</text>
+
+                    <!-- Next Wave -->
+                    <rect x="50" y="280" width="220" height="120" rx="12" fill="#ed8936" stroke="#c05621" stroke-width="3"/>
+                    <text x="160" y="315" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Next-Wave Orchestrator</text>
+                    <text x="160" y="340" text-anchor="middle" fill="white" font-size="11">GitHub Scan → Status</text>
+                    <text x="160" y="360" text-anchor="middle" fill="white" font-size="11">Lanes • Dispatch</text>
+
+                    <!-- Arrows to Visual -->
+                    <path d="M280 140 L520 200" stroke="#2d3748" stroke-width="3" marker-end="url(#arrowhead-blue)"/>
+                    <path d="M280 340 L520 280" stroke="#2d3748" stroke-width="3" marker-end="url(#arrowhead-orange)"/>
+
+                    <!-- Central Visual Layer (highlighted) -->
+                    <rect x="520" y="120" width="320" height="260" rx="16" fill="#9f7aea" stroke="#553c9a" stroke-width="4"/>
+                    <text x="680" y="165" text-anchor="middle" fill="white" font-size="18" font-weight="bold">VISUAL LAYER</text>
+                    <text x="680" y="190" text-anchor="middle" fill="white" font-size="13">(The Living Manifest)</text>
+                    <text x="680" y="220" text-anchor="middle" fill="white" font-size="12">• Architecture Diagrams</text>
+                    <text x="680" y="240" text-anchor="middle" fill="white" font-size="12">• Timelines &amp; Waves</text>
+                    <text x="680" y="260" text-anchor="middle" fill="white" font-size="12">• Flowcharts (Dispatch)</text>
+                    <text x="680" y="280" text-anchor="middle" fill="white" font-size="12">• Dashboards (Readiness)</text>
+                    <text x="680" y="300" text-anchor="middle" fill="white" font-size="12">• Technical Manifests</text>
+                    <text x="680" y="330" text-anchor="middle" fill="white" font-size="11" font-weight="bold">+ Live Local Server</text>
+                    <text x="680" y="350" text-anchor="middle" fill="white" font-size="11">+ Concurrent Watcher</text>
+
+                    <!-- Output -->
+                    <rect x="920" y="180" width="220" height="140" rx="12" fill="#48bb78" stroke="#2f855a" stroke-width="3"/>
+                    <text x="1030" y="215" text-anchor="middle" fill="white" font-size="15" font-weight="bold">Living Manifest</text>
+                    <text x="1030" y="245" text-anchor="middle" fill="white" font-size="12">Self-contained HTMLs</text>
+                    <text x="1030" y="265" text-anchor="middle" fill="white" font-size="12">Local Server (8765)</text>
+                    <text x="1030" y="285" text-anchor="middle" fill="white" font-size="12">Git-checkin ready</text>
+
+                    <path d="M850 250 L910 250" stroke="#2d3748" stroke-width="3" marker-end="url(#arrowhead-green)"/>
+
+                    <!-- Legend markers -->
+                    <defs>
+                        <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0,10 3,0 6" fill="#4299e1"/>
+                        </marker>
+                        <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0,10 3,0 6" fill="#ed8936"/>
+                        </marker>
+                        <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0,10 3,0 6" fill="#48bb78"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🏗️ System Architecture Layers</h2>
+            <div class="diagram-container">
+                <svg viewBox="0 0 1400 600" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Layers -->
+                    <rect x="100" y="50" width="1200" height="80" rx="8" fill="#e2e8f0" stroke="#a0aec0" stroke-width="2"/>
+                    <text x="700" y="95" text-anchor="middle" fill="#2d3748" font-size="16" font-weight="bold">Planner Layer (Invisible Structure)</text>
+
+                    <rect x="100" y="160" width="1200" height="80" rx="8" fill="#fef3c7" stroke="#d69e2e" stroke-width="2"/>
+                    <text x="700" y="205" text-anchor="middle" fill="#744210" font-size="16" font-weight="bold">Wiring / Orchestrator Layer (New Glue)</text>
+
+                    <rect x="100" y="270" width="1200" height="120" rx="12" fill="#9f7aea" stroke="#553c9a" stroke-width="4"/>
+                    <text x="700" y="310" text-anchor="middle" fill="white" font-size="18" font-weight="bold">VISUAL LAYER — THE CENTRAL LIVING MANIFEST (Heart of the Cluster)</text>
+                    <text x="700" y="340" text-anchor="middle" fill="white" font-size="13">architecture-diagram-creator • timeline-creator • flowchart-creator • dashboard-creator • technical-doc-creator</text>
+                    <text x="700" y="365" text-anchor="middle" fill="white" font-size="12">+ Self-contained HTML + Live Server + Concurrent Watcher</text>
+
+                    <rect x="100" y="420" width="1200" height="80" rx="8" fill="#c6f6d5" stroke="#38a169" stroke-width="2"/>
+                    <text x="700" y="465" text-anchor="middle" fill="#22543d" font-size="16" font-weight="bold">Runtime / Consumption Layer (Local Server • Git • Agents • Humans)</text>
+
+                    <!-- Vertical connections -->
+                    <line x1="700" y1="130" x2="700" y2="160" stroke="#2d3748" stroke-width="2" stroke-dasharray="4"/>
+                    <line x1="700" y1="240" x2="700" y2="270" stroke="#2d3748" stroke-width="2" stroke-dasharray="4"/>
+                    <line x1="700" y1="390" x2="700" y2="420" stroke="#2d3748" stroke-width="2" stroke-dasharray="4"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-box" style="background:#4299e1;"></div><span>Swarm Planner</span></div>
+            <div class="legend-item"><div class="legend-box" style="background:#ed8936;"></div><span>Next-Wave Orchestrator</span></div>
+            <div class="legend-item"><div class="legend-box" style="background:#9f7aea;"></div><span>Visual Manifest (Central)</span></div>
+            <div class="legend-item"><div class="legend-box" style="background:#48bb78;"></div><span>Living Output (HTML + Server)</span></div>
+        </div>
+
+        <footer>
+            <strong>Manifest Skill Cluster Architecture v0.1</strong><br>
+            Generated using visual-documentation-skills patterns • Visual layer is the single source of truth for all decisions, stubs, waves, and dispatches.
+        </footer>
+    </div>
+</body>
+</html>

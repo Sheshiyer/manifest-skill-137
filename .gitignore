@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+package-lock.json  # optional - keep if you want reproducible installs, but many skill repos omit it for visual subdirs
+
+# Build / dist
+dist/
+build/
+.next/
+out/
+
+# IDE / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Local env
+.env
+.env.local
+
+# The live visual subdir should be runnable from source
+# but we do not want to bloat the repo with installed deps
+visual-pcb/node_modules/

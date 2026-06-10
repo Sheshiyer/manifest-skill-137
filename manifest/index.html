@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughtseed Manifest — Living Cluster View</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #667eea;
+            --accent: #764ba2;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #1a202c;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.25rem;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+        }
+        
+        .status-bar {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            color: #276749;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card h2 {
+            margin: 0 0 1rem 0;
+            font-size: 1.25rem;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .card p {
+            color: #4a5568;
+            line-height: 1.5;
+            margin: 0 0 1rem 0;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .links a {
+            display: inline-block;
+            background: #edf2f7;
+            color: #2d3748;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.1s ease;
+        }
+        
+        .links a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .section-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            padding-left: 0.25rem;
+        }
+        
+        .meta {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        
+        .cluster-pill {
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 9999px;
+            color: #667eea;
+            font-weight: 700;
+            letter-spacing: -.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:4px;">
+                    <span class="cluster-pill">THOUGHTSEED</span>
+                    <span class="cluster-pill" style="background:#48bb78; color:white;">MANIFEST v0.1</span>
+                </div>
+                <h1>Manifest</h1>
+                <p class="subtitle">The living visual truth of the Swarm + Next-Wave + Visual cluster</p>
+            </div>
+            
+            <div class="status-bar">
+                <span>●</span>
+                <span>Live • Watching planner artifacts</span>
+            </div>
+        </header>
+
+        <div class="grid">
+            <!-- Architecture -->
+            <div class="card">
+                <h2>🏗️ Architecture</h2>
+                <p>Current system + the three-skill cluster itself. Every major decision, layer, data flow, and integration point visualized.</p>
+                <div class="links">
+                    <a href="cluster-architecture.html">Open Architecture Diagram</a>
+                    <a href="cluster-dashboard.html">Open Cluster Dashboard</a>
+                </div>
+            </div>
+
+            <!-- Current Wave / Dispatch -->
+            <div class="card">
+                <h2>🚀 Current Wave + Dispatch</h2>
+                <p>Grounded next wave from GitHub reality. Explicit human vs <code>copilot-swe-agent[bot]</code> lanes. Readiness score and dispatch status.</p>
+                <div class="links">
+                    <a href="cluster-dashboard.html">Open Dispatch Dashboard</a>
+                    <a href="cluster-flow.html">Open Integration Flowchart</a>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="card">
+                <h2>📅 Timeline &amp; Phases</h2>
+                <p>Phases, waves, milestones, and progress across the Copilot integration feature and the broader manifest cluster work. "Done" evidence highlighted.</p>
+                <div class="links">
+                    <a href="cluster-timeline.html">Open Integration Timeline</a>
+                    <a href="cluster-architecture.html">Open Full Architecture</a>
+                </div>
+            </div>
+
+            <!-- Technical / Stubs -->
+            <div class="card">
+                <h2>📜 Contracts, Stubs &amp; Decisions</h2>
+                <p>Key architecture decisions, stubs being built, contracts, and handoff packets — all visualized with the decisions that produced them.</p>
+                <div class="links">
+                    <a href="cluster-dashboard.html">Open Technical Status</a>
+                    <a href="cluster-flow.html">Open Full Integration Flow</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="meta">
+            This is the <strong>Manifest</strong> of the three-skill cluster (swarm-architect + github-next-wave-orchestrator + visual-documentation-skills).<br>
+            Every architecture decision, stub, wave, and "done" should appear here and stay live as the underlying work changes.<br>
+            <strong>Current status:</strong> Bootstrap / first wiring. Run the planners → visuals regenerate → this page updates.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,331 @@
+/* === GHOST IN THE SHELL x STAR TREK LCARS FUTURISTIC DASHBOARD === */
+/* GitS vibe: cyberpunk, neon holographic, dark rainy tech-noir, digital rain, cybernetic interfaces, high-contrast neon on black, organic + tech fusion, data streams, glitchy futurism. */
+/* LCARS: classic TNG/DS9 computer console — black background, rounded rectangular "buttons" and panels in vibrant accent colors (orange, cyan, magenta, yellow), clean geometric sans text (uppercase, tight tracking), horizontal/vertical colored bars, modular status displays, "touch" panels, no shadows, high-contrast, retro-futuristic Starfleet dashboard feel. */
+/* Blended: The 3D "hologram" (Living Blueprint) has GitS cyberpunk holo/neon/digital rain vibe. The 2D UI is pure LCARS console framing the holo display. */
+/* Colors adapted from previous taste + classic LCARS: deep black, gunmetal, neon chartreuse/green for GitS data, mint/cyan, violet/magenta, gold/orange accents. */
+
+:root {
+  --lcars-black: #000000;
+  --lcars-dark: #0a0a0a;
+  --lcars-orange: #ff9900;
+  --lcars-cyan: #00ccff;
+  --lcars-magenta: #ff66cc;
+  --lcars-yellow: #ffff66;
+  --lcars-purple: #cc99ff;
+  --lcars-green: #00ff41; /* GitS matrix green */
+  --text: #e5e7eb;
+  --muted: #888888;
+  --gunmetal: #00272b;
+  --chartreuse: #e0ff4f;
+  --mint: #d6fff6;
+  --violet: #231651;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--lcars-black);
+  color: var(--text);
+  font-family: 'Courier New', 'Consolas', 'Inter', monospace; /* LCARS often uses blocky or specific tech fonts; monospace for retro-futurist console feel */
+  overflow: hidden;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.pcb-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--lcars-black);
+  position: relative;
+}
+
+/* LCARS top header bar - classic horizontal colored sections + black content area */
+.pcb-header {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 48px;
+  background: var(--lcars-black);
+  border-bottom: 3px solid var(--lcars-orange);
+  z-index: 100;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lcars-bar {
+  width: 8px;
+  background: var(--lcars-orange);
+  flex-shrink: 0;
+}
+
+.lcars-header-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background: linear-gradient(to right, var(--lcars-dark), var(--lcars-black));
+  border-right: 2px solid var(--lcars-cyan);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--lcars-cyan);
+}
+
+.brand .icon {
+  color: var(--lcars-green);
+  width: 20px;
+  height: 20px;
+}
+
+.brand .title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 2px;
+}
+
+.brand .subtitle {
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.lcars-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.lcars-status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  background: var(--lcars-dark);
+  border: 1px solid var(--lcars-cyan);
+  border-radius: 3px;
+}
+
+.lcars-led {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px currentColor;
+}
+
+.lcars-led.green { background: var(--lcars-green); color: var(--lcars-green); }
+.lcars-led.purple { background: var(--lcars-purple); color: var(--lcars-purple); }
+.lcars-led.orange { background: var(--lcars-orange); color: var(--lcars-orange); }
+
+.lcars-controls {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.lcars-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--lcars-orange);
+  color: var(--lcars-black);
+  padding: 4px 10px;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: monospace;
+  min-width: 70px;
+  justify-content: center;
+}
+
+.lcars-button:hover {
+  background: var(--lcars-yellow);
+  color: var(--lcars-black);
+}
+
+.lcars-button.purple {
+  background: var(--lcars-purple);
+  color: var(--lcars-black);
+}
+
+.lcars-button.purple:hover {
+  background: #ee88ff;
+}
+
+.lcars-button.cyan {
+  background: var(--lcars-cyan);
+  color: var(--lcars-black);
+}
+
+.lcars-button.cyan:hover {
+  background: #66ddff;
+}
+
+.lcars-button.green {
+  background: var(--lcars-green);
+  color: var(--lcars-black);
+}
+
+.lcars-button.green:hover {
+  background: #66ff66;
+}
+
+.lcars-button.active {
+  background: var(--lcars-yellow);
+  box-shadow: 0 0 6px var(--lcars-yellow);
+}
+
+.canvas-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: var(--lcars-black);
+  border: 2px solid var(--lcars-cyan);
+  border-top: none;
+  border-bottom: none;
+}
+
+.hud {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* LCARS info panel style for node detail */
+.node-detail {
+  pointer-events: auto;
+  background: var(--lcars-black);
+  border: 2px solid var(--lcars-magenta);
+  border-radius: 8px;
+  padding: 8px 12px;
+  max-width: 280px;
+  font-size: 11px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 8px rgba(255, 102, 204, 0.3);
+}
+
+.node-detail .detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--lcars-magenta);
+  border-bottom: 1px solid var(--lcars-magenta);
+  padding-bottom: 2px;
+}
+
+.node-detail button {
+  background: none;
+  border: none;
+  color: var(--lcars-magenta);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.node-detail .hint {
+  margin-top: 4px;
+  font-size: 9px;
+  color: var(--muted);
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* LCARS legend / status panel at bottom */
+.legend {
+  pointer-events: auto;
+  background: var(--lcars-black);
+  border: 2px solid var(--lcars-orange);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 10px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 180px;
+}
+
+.legend .lcars-legend-title {
+  color: var(--lcars-orange);
+  font-weight: 700;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--lcars-orange);
+  padding-bottom: 2px;
+  font-size: 9px;
+}
+
+.legend .swatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  margin-right: 4px;
+  vertical-align: middle;
+  border-radius: 1px;
+}
+
+.legend .swatch.living { background: var(--chartreuse); }
+.legend .swatch.grid { background: var(--mint); }
+.legend .swatch.core { background: var(--violet); }
+.legend .swatch.accent { background: var(--lcars-orange); }
+
+.footer-note {
+  position: absolute;
+  bottom: 4px;
+  right: 12px;
+  font-size: 8px;
+  color: #555;
+  text-align: right;
+  line-height: 1.1;
+  pointer-events: none;
+  max-width: 300px;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+canvas {
+  display: block;
+  background: var(--lcars-black);
+}
+
+/* LCARS decorative bars for that authentic console feel */
+.lcars-top-bar {
+  height: 4px;
+  background: linear-gradient(to right, var(--lcars-orange), var(--lcars-cyan), var(--lcars-magenta));
+}
+
+.lcars-side-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--lcars-orange);
+  z-index: 10;
+}
+
+.lcars-side-bar.left { left: 0; }
+.lcars-side-bar.right { right: 0; background: var(--lcars-cyan); }

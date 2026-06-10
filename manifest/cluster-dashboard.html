@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifest Skill Cluster — Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 2.5rem;
+        }
+        h1 { font-size: 2rem; text-align: center; color: #2d3748; margin-bottom: 0.3rem; }
+        .subtitle { text-align: center; color: #718096; margin-bottom: 1.5rem; }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .kpi-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        .kpi-label { font-size: 0.85rem; color: #718096; margin-bottom: 0.25rem; }
+        .kpi-value { font-size: 1.9rem; font-weight: 700; color: #2d3748; }
+        .kpi-trend { font-size: 0.8rem; font-weight: 600; }
+        .trend-up { color: #48bb78; }
+        .section { margin: 1.5rem 0; }
+        .section-title { font-size: 1.15rem; color: #2d3748; margin-bottom: 0.75rem; border-bottom: 2px solid #667eea; padding-bottom: 0.3rem; }
+        .status-table { width: 100%; border-collapse: collapse; }
+        .status-table th, .status-table td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 0.9rem; }
+        .status-table th { color: #4a5568; font-weight: 600; }
+        .pill { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+        .pill-green { background: #c6f6d5; color: #22543d; }
+        .pill-purple { background: #e9d8fd; color: #553c9a; }
+        .pill-orange { background: #feebc8; color: #744210; }
+        footer { text-align: center; margin-top: 1.5rem; color: #718096; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Manifest Skill Cluster Dashboard</h1>
+        <p class="subtitle">Live status of the three-skill bundle • Visual layer is the central living manifest</p>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Cluster Readiness</div>
+                <div class="kpi-value">🟢 Green</div>
+                <div class="kpi-trend trend-up">+ Visual layer fully emphasized</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Visual Layer Health</div>
+                <div class="kpi-value">100%</div>
+                <div class="kpi-trend trend-up">5 generators active • Central hub</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Integration Points</div>
+                <div class="kpi-value">4 / 4</div>
+                <div class="kpi-trend trend-up">Wired: Planners → Visual → Server</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Concurrent Status</div>
+                <div class="kpi-value">Bootstrap</div>
+                <div class="kpi-trend">Watcher + live server next</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Component Status</h2>
+            <table class="status-table">
+                <tr>
+                    <th>Skill / Component</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Visual Contribution</th>
+                </tr>
+                <tr>
+                    <td><strong>swarm-architect-skill</strong></td>
+                    <td>Broad planner (phases/waves/contracts)</td>
+                    <td><span class="pill pill-green">Active + Copilot integration</span></td>
+                    <td>Feeds plans, decisions, stubs to visual</td>
+                </tr>
+                <tr>
+                    <td><strong>github-next-wave-orchestrator</strong></td>
+                    <td>GitHub reality + lane-aware waves + dispatch</td>
+                    <td><span class="pill pill-green">Active (feature branch)</span></td>
+                    <td>Feeds waves, readiness, dispatch status</td>
+                </tr>
+                <tr>
+                    <td><strong>visual-documentation-skills (1.1.0)</strong></td>
+                    <td><strong>THE CENTRAL LIVING MANIFEST</strong></td>
+                    <td><span class="pill pill-purple">Core • 5 generators</span></td>
+                    <td>Produces architecture, timeline, flow, dashboard, technical docs</td>
+                </tr>
+                <tr>
+                    <td><strong>Manifest Wiring + Server</strong></td>
+                    <td>Glue + live runtime</td>
+                    <td><span class="pill pill-orange">In bootstrap (this session)</span></td>
+                    <td>Local server (8765) • Watcher for concurrent updates</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Dispatch &amp; Readiness Snapshot (Simulated from Current Work)</h2>
+            <table class="status-table">
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>Human Lane Tasks</td>
+                    <td>High (planning, architecture decisions, wiring)</td>
+                    <td>Complex, cross-skill, secrets-free by design</td>
+                </tr>
+                <tr>
+                    <td>Copilot-eligible Tasks</td>
+                    <td>Medium (bootstrap templates, simple stubs, docs)</td>
+                    <td>Well-scoped items after planner produces them</td>
+                </tr>
+                <tr>
+                    <td>Visual Generation</td>
+                    <td>4 / 5 visuals generated in this run</td>
+                    <td>Architecture, Timeline, Flow, Dashboard live</td>
+                </tr>
+                <tr>
+                    <td>Server</td>
+                    <td>http://127.0.0.1:8765/</td>
+                    <td>Serving manifest/ — refresh after new generations</td>
+                </tr>
+            </table>
+        </div>
+
+        <footer>
+            Visual layer is the single source of manifested truth. Every architecture decision, stub, wave, and dispatch appears here and stays current.
+        </footer>
+    </div>
+</body>
+</html>
