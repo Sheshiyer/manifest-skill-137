@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manifest Skill Cluster — Dashboard</title>
+    <title>10869x77 Project Dashboard - Manifest Skill Cluster</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -13,7 +13,7 @@
             min-height: 100vh;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -24,7 +24,7 @@
         .subtitle { text-align: center; color: #718096; margin-bottom: 1.5rem; }
         .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
@@ -39,115 +39,203 @@
         .kpi-value { font-size: 1.9rem; font-weight: 700; color: #2d3748; }
         .kpi-trend { font-size: 0.8rem; font-weight: 600; }
         .trend-up { color: #48bb78; }
+        .trend-warn { color: #ed8936; }
         .section { margin: 1.5rem 0; }
         .section-title { font-size: 1.15rem; color: #2d3748; margin-bottom: 0.75rem; border-bottom: 2px solid #667eea; padding-bottom: 0.3rem; }
         .status-table { width: 100%; border-collapse: collapse; }
         .status-table th, .status-table td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 0.9rem; }
-        .status-table th { color: #4a5568; font-weight: 600; }
+        .status-table th { color: #4a5568; font-weight: 600; background: #f7fafc; }
         .pill { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
         .pill-green { background: #c6f6d5; color: #22543d; }
         .pill-purple { background: #e9d8fd; color: #553c9a; }
         .pill-orange { background: #feebc8; color: #744210; }
+        .pill-blue { background: #bee3f8; color: #2a4365; }
+        .pill-red { background: #fed7d7; color: #742a2a; }
+        .progress-bar { background: #e2e8f0; border-radius: 9999px; height: 10px; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #48bb78, #38a169); height: 100%; border-radius: 9999px; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
         footer { text-align: center; margin-top: 1.5rem; color: #718096; font-size: 0.8rem; }
+        .wave-card { background: #f7fafc; border-radius: 12px; padding: 1rem; margin-bottom: 0.75rem; border-left: 4px solid #667eea; }
+        .wave-header { font-weight: 600; color: #2d3748; margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .wave-items { font-size: 0.85rem; color: #4a5568; }
+        .repo-link { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-link:hover { text-decoration: underline; }
+        .timestamp { font-size: 0.75rem; color: #a0aec0; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📊 Manifest Skill Cluster Dashboard</h1>
-        <p class="subtitle">Live status of the three-skill bundle • Visual layer is the central living manifest</p>
+        <h1>Tryambakam Noesis - Paperclip Reconstruction</h1>
+        <p class="subtitle">
+            <a href="https://github.com/Sheshiyer/10869x77" class="repo-link" target="_blank">Sheshiyer/10869x77</a> 
+            <span class="timestamp">Last push: 2026-06-08 08:04 UTC</span>
+        </p>
 
         <div class="kpi-grid">
             <div class="kpi-card">
-                <div class="kpi-label">Cluster Readiness</div>
-                <div class="kpi-value">🟢 Green</div>
-                <div class="kpi-trend trend-up">+ Visual layer fully emphasized</div>
+                <div class="kpi-label">Current Phase</div>
+                <div class="kpi-value">P6</div>
+                <div class="kpi-trend trend-up">Final Validation & Launch</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-label">Visual Layer Health</div>
-                <div class="kpi-value">100%</div>
-                <div class="kpi-trend trend-up">5 generators active • Central hub</div>
+                <div class="kpi-label">Total Issues</div>
+                <div class="kpi-value">144</div>
+                <div class="kpi-trend">Swarm plan synchronized</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-label">Integration Points</div>
-                <div class="kpi-value">4 / 4</div>
-                <div class="kpi-trend trend-up">Wired: Planners → Visual → Server</div>
+                <div class="kpi-label">Open Issues</div>
+                <div class="kpi-value">15</div>
+                <div class="kpi-trend trend-warn">W22-W24 remaining</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-label">Concurrent Status</div>
-                <div class="kpi-value">Bootstrap</div>
-                <div class="kpi-trend">Watcher + live server next</div>
+                <div class="kpi-label">Completion</div>
+                <div class="kpi-value">89.6%</div>
+                <div class="kpi-trend trend-up">129/144 closed</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Wave 6 Status</div>
+                <div class="kpi-value">PASS</div>
+                <div class="kpi-trend trend-up">Dry-run validated</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Unit Tests</div>
+                <div class="kpi-value">21</div>
+                <div class="kpi-trend trend-up">All passing</div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Component Status</h2>
-            <table class="status-table">
-                <tr>
-                    <th>Skill / Component</th>
-                    <th>Role</th>
-                    <th>Status</th>
-                    <th>Visual Contribution</th>
-                </tr>
-                <tr>
-                    <td><strong>swarm-architect-skill</strong></td>
-                    <td>Broad planner (phases/waves/contracts)</td>
-                    <td><span class="pill pill-green">Active + Copilot integration</span></td>
-                    <td>Feeds plans, decisions, stubs to visual</td>
-                </tr>
-                <tr>
-                    <td><strong>github-next-wave-orchestrator</strong></td>
-                    <td>GitHub reality + lane-aware waves + dispatch</td>
-                    <td><span class="pill pill-green">Active (feature branch)</span></td>
-                    <td>Feeds waves, readiness, dispatch status</td>
-                </tr>
-                <tr>
-                    <td><strong>visual-documentation-skills (1.1.0)</strong></td>
-                    <td><strong>THE CENTRAL LIVING MANIFEST</strong></td>
-                    <td><span class="pill pill-purple">Core • 5 generators</span></td>
-                    <td>Produces architecture, timeline, flow, dashboard, technical docs</td>
-                </tr>
-                <tr>
-                    <td><strong>Manifest Wiring + Server</strong></td>
-                    <td>Glue + live runtime</td>
-                    <td><span class="pill pill-orange">In bootstrap (this session)</span></td>
-                    <td>Local server (8765) • Watcher for concurrent updates</td>
-                </tr>
-            </table>
+            <h2 class="section-title">Progress</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 89.6%"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #718096; margin-top: 0.5rem;">
+                <span>129 completed</span>
+                <span>15 remaining</span>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div class="section">
+                <h2 class="section-title">Wave 6 Validation (TN-036)</h2>
+                <table class="status-table">
+                    <tr><th>Component</th><th>Status</th><th>Details</th></tr>
+                    <tr>
+                        <td>Manifest validation</td>
+                        <td><span class="pill pill-green">pass</span></td>
+                        <td>Tenant manifest valid</td>
+                    </tr>
+                    <tr>
+                        <td>Company import dry-run</td>
+                        <td><span class="pill pill-green">pass</span></td>
+                        <td>17 planned actions</td>
+                    </tr>
+                    <tr>
+                        <td>Duplicate detection</td>
+                        <td><span class="pill pill-orange">conflict</span></td>
+                        <td>7 conflicts (expected)</td>
+                    </tr>
+                    <tr>
+                        <td>Project lane planner</td>
+                        <td><span class="pill pill-green">planned</span></td>
+                        <td>3 preview actions</td>
+                    </tr>
+                    <tr>
+                        <td>Agent desired-state diff</td>
+                        <td><span class="pill pill-purple">drift</span></td>
+                        <td>9 creates, 1 update</td>
+                    </tr>
+                    <tr>
+                        <td>Credential scan</td>
+                        <td><span class="pill pill-green">clean</span></td>
+                        <td>No secrets detected</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Capability Gates</h2>
+                <table class="status-table">
+                    <tr><th>Action Type</th><th>Gate</th></tr>
+                    <tr><td>read, status, planning</td><td><span class="pill pill-green">Enabled</span></td></tr>
+                    <tr><td>preview, dry-run</td><td><span class="pill pill-green">Enabled</span></td></tr>
+                    <tr><td>Hermes commands</td><td><span class="pill pill-orange">Approval-gated</span></td></tr>
+                    <tr><td>Telegram sends</td><td><span class="pill pill-orange">Approval-gated</span></td></tr>
+                    <tr><td>Retrieval/indexing</td><td><span class="pill pill-orange">Approval-gated</span></td></tr>
+                    <tr><td>Publishing</td><td><span class="pill pill-orange">Approval-gated</span></td></tr>
+                    <tr><td>GitHub writes</td><td><span class="pill pill-orange">Approval-gated</span></td></tr>
+                    <tr><td>Asset generation</td><td><span class="pill pill-orange">Approval-gated</span></td></tr>
+                </table>
+            </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">Dispatch &amp; Readiness Snapshot (Simulated from Current Work)</h2>
+            <h2 class="section-title">Next Waves (W22 - W24)</h2>
+            
+            <div class="wave-card">
+                <div class="wave-header">
+                    <span>Wave 22 - Observability & Rollback</span>
+                    <span class="pill pill-blue">3 items</span>
+                </div>
+                <div class="wave-items">
+                    TN-130: Incident response ownership (claude:ops) | 
+                    TN-131: Audit report template (claude:docs) | 
+                    TN-132: Rollback gate validation (gemini:validation)
+                </div>
+            </div>
+
+            <div class="wave-card">
+                <div class="wave-header">
+                    <span>Wave 23 - End-to-End Chain Validation</span>
+                    <span class="pill pill-blue">6 items</span>
+                </div>
+                <div class="wave-items">
+                    TN-133: E2E validation matrix | 
+                    TN-134: Paperclip-to-Brahman chain | 
+                    TN-135: Retrieval-to-agent chain | 
+                    TN-136: Hermes-Telegram chain | 
+                    TN-137: Residual-risk policy | 
+                    TN-138: W23 readiness gate
+                </div>
+            </div>
+
+            <div class="wave-card">
+                <div class="wave-header">
+                    <span>Wave 24 - Launch Readiness</span>
+                    <span class="pill pill-purple">6 items</span>
+                </div>
+                <div class="wave-items">
+                    TN-139: GitHub sync packet | 
+                    TN-140: Architecture reference index | 
+                    TN-141: Worker bootstrap packets | 
+                    TN-142: Final acceptance report | 
+                    TN-143: Launch-readiness memo | 
+                    TN-144: Phase 6 gate close
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Agent Distribution</h2>
             <table class="status-table">
+                <tr><th>Agent</th><th>Swarms</th><th>Open Tasks</th></tr>
                 <tr>
-                    <th>Metric</th>
-                    <th>Value</th>
-                    <th>Notes</th>
+                    <td><span class="pill pill-purple">claude</span></td>
+                    <td>ops, docs, github, product</td>
+                    <td>7 items</td>
                 </tr>
                 <tr>
-                    <td>Human Lane Tasks</td>
-                    <td>High (planning, architecture decisions, wiring)</td>
-                    <td>Complex, cross-skill, secrets-free by design</td>
-                </tr>
-                <tr>
-                    <td>Copilot-eligible Tasks</td>
-                    <td>Medium (bootstrap templates, simple stubs, docs)</td>
-                    <td>Well-scoped items after planner produces them</td>
-                </tr>
-                <tr>
-                    <td>Visual Generation</td>
-                    <td>4 / 5 visuals generated in this run</td>
-                    <td>Architecture, Timeline, Flow, Dashboard live</td>
-                </tr>
-                <tr>
-                    <td>Server</td>
-                    <td>http://127.0.0.1:8765/</td>
-                    <td>Serving manifest/ — refresh after new generations</td>
+                    <td><span class="pill pill-orange">gemini</span></td>
+                    <td>validation, qa</td>
+                    <td>8 items</td>
                 </tr>
             </table>
         </div>
 
         <footer>
-            Visual layer is the single source of manifested truth. Every architecture decision, stub, wave, and dispatch appears here and stays current.
+            Generated by Manifest Skill Cluster | Served at <code>http://127.0.0.1:8765/</code> | 
+            Visual layer is the single source of manifested truth
         </footer>
     </div>
 </body>
