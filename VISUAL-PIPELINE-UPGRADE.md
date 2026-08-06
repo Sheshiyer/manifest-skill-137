@@ -33,7 +33,7 @@ The old static HTMLs in `manifest/` remain as lightweight 2D references. This `v
 
 ## How to run
 ```bash
-cd /Volumes/madara/2026/twc-vault/01-Projects/thoughtseed/manifest-skill-cluster/visual-pcb
+cd /Volumes/madara/2026/Projects/thoughtseed/manifest-skill-cluster/visual-pcb
 npm run dev
 ```
 
