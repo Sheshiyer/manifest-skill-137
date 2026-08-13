@@ -32,9 +32,9 @@ intentionally outside this packet.
 ## Local commands
 
 ```bash
-not-applicable
-cd visual-pcb && npm run build
+cd visual-pcb && npm run build && npm run lint
 ```
 
-`cd visual-pcb && npm run build` is the current deterministic verification
-command.
+The live client reads the separately-installed Temperance Manifest Bridge. See
+`README.md` and `docs/temperance-integration.md` for the two-repository local
+startup flow.

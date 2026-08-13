@@ -1,112 +1,96 @@
 <div align="center">
 
-<img src="assets/manifest-hero-banner.jpg" width="100%" alt="Manifest Skill Cluster — Live GitS + LCARS holographic visual manifest" />
+<img src="assets/manifest-hero-banner.jpg" width="100%" alt="Manifest Skill Cluster operator console" />
 
 # Manifest Skill Cluster
 
-**The living visual manifest of the three-skill bundle.**
-
-Every architecture decision, stub, wave, contract, and "done" is visualized and kept concurrent.
+**A live, project-scoped visual projection of planning, execution, operations, delivery, and evidence.**
 
 </div>
 
----
+Manifest makes agent work inspectable while it is happening. It does not replace the runtime that owns that work: Temperance Engine, PAI hooks, planning artifacts, and OmniRoute remain the sources of truth.
 
-**The three skills it bundles:**
+## What is live now
 
-1. **swarm-architect-skill** — Broad multi-agent planner (phase → wave → swarm, contracts, GitHub sync, OpenViking memory, with optional GitHub Copilot autonomous dispatch routing for eligible tasks).
-2. **github-next-wave-orchestrator** — Specialized GitHub-grounded engine: repo scan → status report → prioritized next wave with explicit human vs GitHub Copilot autonomous dispatch (one optional explicit lane) + label-based dispatch.
-3. **visual layer** — The heart. Five static generators (architecture, timeline, flowchart, dashboard, technical docs) **plus the live interactive visual-pcb** (Ghost in the Shell futurist + Star Trek LCARS 3D R3F experience for true real-time "when the changes are happening" visualization).
+The `visual-pcb` package is a five-page local operator console:
 
-## Core Principle
+- **Overview** — topology, phase rail, attention, current events, and selected evidence.
+- **Planning** — projects, materialized next-wave options, planning sessions, and approval observations.
+- **Execution** — observed agent lanes, session lifecycles, and routing telemetry.
+- **Evidence** — bounded/redacted event records and their source pointers.
+- **Ops / Delivery** — freshness, project readiness, source mix, alerts, and delivery proof.
 
-**The visual layer is not an afterthought — it is the single source of manifested truth.**
+It reads a local Manifest Bridge snapshot and Server-Sent Events stream. It shows `LIVE`, `STALE`, `OFFLINE`, and empty state deliberately; it never invents provider health, worker status, or completion.
 
-When you run the manifest:
-- The planners produce structure (plans, waves, decisions, stubs, dispatch status, lane splits).
-- The manifest wiring feeds those artifacts into the visual generators (static HTML + live 3D).
-- You get a living set of visuals served locally.
-- A watcher (or manual refresh) keeps everything concurrent as the underlying work changes.
+## Authority model
 
-## The Live Visual Experience (visual-pcb)
+```mermaid
+flowchart LR
+  P[PAI hooks and planning files] --> B[Temperance Manifest Bridge]
+  W[Next-wave proposals] --> B
+  B --> J[Redacted JSONL and read model]
+  J --> V[Manifest visual console]
+  O[Operator approval] --> C[Temperance swarm-control ledger]
+  C --> D[Bounded dispatcher]
+  D --> B
+```
 
-The custom **visual-pcb** (in this repo under `visual-pcb/`) is the "truly visual and adaptive" implementation:
+- **Temperance Engine** owns task phases, proposal construction, routing policy, approval checks, and swarm safeguards.
+- **Manifest Bridge** owns bounded event normalization, persistence, snapshots, and SSE.
+- **This console** owns visual interpretation of those projections.
+- A console click, JSONL record, or SSE event can never authorize a worker.
 
-- Ghost in the Shell cyberpunk holographic + digital rain + data streams.
-- Star Trek LCARS dashboard framing (black console, rounded orange/cyan/magenta/yellow/purple panels, uppercase technical monospace, high-contrast status LEDs and bars).
-- Living Blueprint base (Swiss-grid precision + bioluminescent energy flows from the Design vault).
-- Three nodes (SWARM / NEXTWAVE / central VISUAL as the emphasized living heart) with curved neon flows and traveling particles.
-- Evidence beacons for every decision/stub/"done".
-- Immediate reactivity: buttons ("+ Add Decision", "Dispatch Wave", "Manifest Update", Pause/Resume) cause new beacons, particle bursts, core pulses, and count updates in the 3D hologram.
+The automatic paid-swarm path is still deliberately gated. It requires a PostgreSQL one-use claim plus fresh project, Git, source, task, policy, quota, worktree, and concurrency checks. Worker receipts, terminal closure, lifecycle projections, and UI eligibility detail are still tracked as open release gates.
 
-Run it:
+## Run the local operator view
+
+Clone this repository alongside [Temperance Engine](https://github.com/Sheshiyer/temperance_engine), then start the bridge before the client:
+
+```bash
+export TEMPERANCE_ROOT=/path/to/temperance_engine
+export MANIFEST_ROOT=/path/to/manifest-skill-137
+
+cd "$TEMPERANCE_ROOT/package/manifest-bridge"
+bun install
+bun run src/cli.ts serve --all --port 8766
+
+# In a second terminal:
+cd "$MANIFEST_ROOT/visual-pcb"
+npm install
+VITE_MANIFEST_BRIDGE_URL=http://127.0.0.1:8766 npm run dev -- --host 127.0.0.1
+```
+
+Initialize and sync a project before expecting live rows in the console:
+
+```bash
+cd "$TEMPERANCE_ROOT"
+node package/router/temperance-project-init.mjs --cwd /path/to/project
+cd package/manifest-bridge
+bun run src/cli.ts sync --cwd /path/to/project
+```
+
+The client is normally available at `http://127.0.0.1:5173`; the bridge is normally available at `http://127.0.0.1:8766`.
+
+## Documentation map
+
+- [visual-pcb/README.md](visual-pcb/README.md) — visual pages, API reads, design language, and client checks.
+- [docs/temperance-integration.md](docs/temperance-integration.md) — cross-repository setup, data flow, authority boundaries, and safety status.
+- [CONSOLE_GAP_REGISTER.md](CONSOLE_GAP_REGISTER.md) — maintained 48-item evidence-oriented console backlog.
+- [manifest/README.md](manifest/README.md) — archival static HTML artifacts; not the live runtime console.
+- [SKILL.md](SKILL.md) — skill-cluster behavior and source boundaries.
+
+## Legacy static outputs
+
+`manifest/` retains self-contained HTML artifacts for sharing or archival review. Those documents do not subscribe to runtime telemetry and must not be read as current operational truth. The bridge-backed `visual-pcb` console is the live surface.
+
+## Verification
 
 ```bash
 cd visual-pcb
-npm install
-npm run dev
-# Open the local Vite URL (usually http://localhost:5173 or 5174)
+npm run build
+npm run lint
 ```
-
-Orbit with mouse, click nodes/beacons for LCARS-style detail panels, watch the live state changes.
-
-## Static Visual Outputs (manifest/)
-
-Generated self-contained single-file HTML (using the visual-documentation-skills generators + cluster context):
-
-- `manifest/index.html` — The living hub
-- `manifest/cluster-architecture.html`
-- `manifest/cluster-timeline.html`
-- `manifest/cluster-flow.html`
-- `manifest/cluster-dashboard.html`
-
-Serve them:
-
-```bash
-cd manifest
-python3 -m http.server 8765
-# Open http://127.0.0.1:8765/
-```
-
-## How to Use the Cluster
-
-1. Ensure the three skills are available in your runtime.
-2. (Optional but recommended) Run the planners (swarm + next-wave) to produce fresh plans, waves, decisions, stubs, and dispatch evidence.
-3. Generate/refresh the visuals (prompts in `manifest/README.md` or the cluster orchestrator).
-4. Serve the static manifest or the live visual-pcb.
-5. (Future) Add a watcher that monitors planner outputs and auto-regenerates the affected visuals.
-
-See `SKILL.md` for the full skill definition and output contract.
 
 ## Assets
 
-Custom icons and hero generated in the exact blended aesthetic (Ghost in the Shell + LCARS + Living Blueprint from the Design vault, using nano_banana_2 via Higgsfield):
-
-- `assets/manifest-hero-banner.jpg` — Wide README / social hero (LCARS console framing the live 3D holo)
-- `assets/icons/manifest-cluster-logo.jpg` — Primary square logo/icon
-- `assets/icons/visual-favicon.jpg` — Favicon / small icon for the live demo
-- `assets/icons/three-skills-set.jpg` — Matching icon set for SWARM / VISUAL / NEXTWAVE
-
-These were created following the Art / image generation process with prompts derived from the Design resources (Amir premium editorial product/icon style, Curios "Living Blueprint" Swiss-grid + bioluminescent, Nakul color combos, logo generators) and the locked GitS + LCARS taste established for the visual-pcb.
-
-## Why This Cluster Exists
-
-High-ceremony planning and GitHub-grounded execution produce a lot of invisible structure. This cluster makes every decision, stub, wave, dispatch lane, and "done" **visible, reviewable, and alive** — in both portable static HTML and a real-time interactive 3D holographic console.
-
-It is the single pane of glass for the work.
-
-## Contributing & License
-
-See the source skills for contributing details. This cluster is the coordinating layer and visual heart.
-
-**Built with the three skills + the Design vault taste (Amir, Curios, Nakul) + the live visual-pcb (GitS + LCARS).**
-
----
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,6,11,20&height=80&text=Manifest%20Skill%20Cluster&fontSize=28&fontAlignY=40&fontColor=ffffff" width="100%" />
-
-The invisible, made visible. And kept alive.
-
-</div>
+The hero and icon assets preserve the original LCARS / Living Blueprint visual language. The current console uses that language as an operational interface—dark instrument panels, Swiss grid, cyan flow, orange attention, magenta decisions, violet routing, and mint healthy evidence—rather than a simulated system diagram.

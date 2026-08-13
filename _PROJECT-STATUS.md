@@ -1,29 +1,23 @@
 # manifest-skill-cluster — Project Status
 
-> Auto-generated project snapshot · last scanned 2026-07-28 · regenerable via `_scan_projects.py` + `_generate_status.py`
+> Maintained runtime-status note · refreshed 2026-08-13
 
-## 🔗 Links
+## Current delivery state
 
-- **GitHub repo:** https://github.com/Sheshiyer/manifest-skill-137
-- **Issues / roadmap board:** https://github.com/Sheshiyer/manifest-skill-137/issues
-
-## 📍 Where the project is at (git state)
-
+- **Repository:** https://github.com/Sheshiyer/manifest-skill-137
 - **Branch:** `main`
-- **Last commit:** `4e54e51` · 2026-06-10 · Add generated assets (LCARS+GitS+LivingBlueprint icons + hero banner) and rich root README following updated readme skill visual storytelling
-- **Uncommitted changes:** 5 file(s)
+- **Current delivery:** bridge-backed five-page operator console in `visual-pcb/`.
+- **Runtime dependency:** the local Manifest Bridge in the separate `temperance_engine` repository.
+- **Verification:** `cd visual-pcb && npm run build && npm run lint`.
 
-## 🧠 CLAUDE.md — current context
+## What is observed versus controlled
 
-_No CLAUDE.md found — project has no agent-context file yet._
+The console displays a read model of project, planning, execution, evidence, and delivery facts. It can show proposal/approval/dispatch observations but does not approve, claim, or launch work. Temperance owns that control path.
 
-## ♻️ PAI workflow state
+## Current gaps
 
-- No PAI artifacts (`.prd/`, `.planning/`, `MEMORY/WORK/`) — project not yet under PAI Algorithm tracking.
+The maintained backlog is [CONSOLE_GAP_REGISTER.md](CONSOLE_GAP_REGISTER.md). The principal remaining release work is explicit swarm eligibility/blockers, worker receipts, terminal closure, lifecycle projection, deep links, and automated visual accessibility/regression coverage.
 
-## ✅ Suggested next actions
+## Operator pickup
 
-- [ ] Commit or stash 5 uncommitted change(s)
-- [ ] Add a CLAUDE.md so agents can pick up context
-- [ ] Add a ROADMAP.md (or link the GitHub Project board here)
-- [ ] Create a PRD if this project re-enters active development
+Read `PROJECT.md`, `AGENTS.md`, `CLAUDE.md`, and `docs/temperance-integration.md` before changing the repository. Keep the bridge URL configurable, preserve the projection-only boundary, and do not add local paths, credentials, raw prompts, or tool bodies to the repository.

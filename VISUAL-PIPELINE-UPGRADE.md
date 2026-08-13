@@ -1,6 +1,6 @@
 # Visual Pipeline Upgrade — Manifest Skill Cluster (Taste-Locked)
 
-**Status:** Taste aesthetic identified from `/Volumes/madara/2026/twc-vault/03-Resources/Design` and locked into the 3D R3F circuit.
+**Status:** Historical pre-event-plane design exploration. The current live console is documented in [`README.md`](README.md) and [`docs/temperance-integration.md`](docs/temperance-integration.md); do not treat the simulated 3D interaction notes below as runtime behavior.
 
 ## Identified Aesthetic (locked for this circuit)
 
