@@ -57,6 +57,22 @@ bun run src/cli.ts serve --all --port 8766
 Then start this repository’s `visual-pcb` client with
 `VITE_MANIFEST_BRIDGE_URL=http://127.0.0.1:8766`.
 
+## Persistent local console
+
+The API bridge and visual console are deliberately separate processes. The
+bridge owns JSON/SSE at `127.0.0.1:8766`; its browser root redirects to the
+console at `127.0.0.1:5173`. Install the user-scoped console LaunchAgent from
+the Temperance checkout:
+
+```bash
+export MANIFEST_CONSOLE_ROOT=/path/to/manifest-skill-137/visual-pcb
+bash "$TEMPERANCE_ROOT/scripts/temperance-manifest-console-launchd.sh" install
+```
+
+`manifest-bridge doctor` verifies bridge health, console health, and both
+LaunchAgent owners. A working bridge alone is therefore not reported as a
+working visual system.
+
 ## Safety model
 
 The visual console can present an approval observation but cannot approve a plan, consume an approval, claim a dispatch, or start a worker. Those actions belong to Temperance’s control path.

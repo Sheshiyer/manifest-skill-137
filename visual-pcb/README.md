@@ -10,6 +10,20 @@ npm install
 npm run dev
 ```
 
+For the persistent local operator surface, install the supervised console
+service from the Temperance checkout instead of leaving a terminal running:
+
+```bash
+export TEMPERANCE_ROOT=/path/to/temperance_engine
+export MANIFEST_CONSOLE_ROOT="$(pwd)"
+bash "$TEMPERANCE_ROOT/scripts/temperance-manifest-console-launchd.sh" install
+```
+
+It serves this UI on `http://127.0.0.1:5173`, points it at the loopback bridge,
+and restarts it on login/crash. The API bridge at `http://127.0.0.1:8766`
+redirects browser root requests here; `/health`, `/snapshot`, and `/events`
+remain bridge API endpoints.
+
 The default bridge is `http://127.0.0.1:8766`. Override it with:
 
 ```bash
@@ -20,6 +34,14 @@ Start the bridge separately from `manifest-bridge`:
 
 ```bash
 bun run src/cli.ts serve --all --port 8766
+```
+
+Inspect the two services independently:
+
+```bash
+bash "$TEMPERANCE_ROOT/scripts/temperance-manifest-bridge-launchd.sh" status
+bash "$TEMPERANCE_ROOT/scripts/temperance-manifest-console-launchd.sh" status
+cd "$TEMPERANCE_ROOT/package/manifest-bridge" && bun run doctor --verbose
 ```
 
 ## Operator pages
