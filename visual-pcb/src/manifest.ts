@@ -18,6 +18,7 @@ export interface ManifestEvent {
   source: string
   project_id?: string
   session_id?: string
+  correlation_id?: string
   agent_id?: string
   phase?: Phase
   payload: Record<string, unknown>
@@ -123,7 +124,7 @@ export function eventLabel(event: ManifestEvent): string {
 
 export function eventTone(event: ManifestEvent): 'cyan' | 'orange' | 'magenta' | 'violet' | 'mint' {
   if (event.status === 'failed' || event.kind.includes('alert')) return 'orange'
-  if (event.kind.includes('decision') || event.kind.includes('prompt')) return 'magenta'
+  if (event.kind.includes('decision') || event.kind.includes('prompt') || event.kind.includes('algorithm')) return 'magenta'
   if (event.kind.includes('route') || event.source === 'omniroute') return 'violet'
   if (event.kind.includes('agent') || event.kind.includes('wave')) return 'mint'
   return 'cyan'

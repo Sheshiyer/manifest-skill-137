@@ -28,6 +28,19 @@ sequenceDiagram
 
 The bridge normalizes only bounded payloads. Raw prompts, raw tool bodies, credentials, and provider secrets are outside the UI contract.
 
+## Algorithm activation boundary
+
+The console is not activated by every prompt. The PAI classifier first resolves
+the mode; only `ALGORITHM` runs inside the host allowlist emit
+`algorithm.activated`. The event is anchored to the real Git worktree root and
+carries a session-scoped `run_id`, mode, tier, phase, and enrollment state.
+
+An eligible repository without `.temperance/manifest.json` is shown as
+**observed-only**. That is a useful visual candidate, not implicit enrollment:
+the hook never writes to the repository. Later agent events must present the
+same active-run receipt, so Native work and unrelated projects do not become
+phantom activity in the console.
+
 ## Project bootstrap
 
 ```bash
